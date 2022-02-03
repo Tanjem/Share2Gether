@@ -1,0 +1,1 @@
+CREATE TABLE `login-system`.`tbluserroomlist` ( `RoomList_ID` INT NOT NULL AUTO_INCREMENT , `Account_ID` VARCHAR NOT NULL , `Room_ID` VARCHAR(20) NOT NULL , `Status` VARCHAR(5) NOT NULL ) ENGINE = InnoDB;

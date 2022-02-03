@@ -1,0 +1,1 @@
+CREATE TABLE `login-system`. ( `Id` INT(11) AUTO_INCREMENT , `FName` VARCHAR(100) , `SName` VARCHAR(100) , `DOB` DATE NOT NULL , `email` VARCHAR(100) , `Password` VARCHAR(255) , `Gender` VARCHAR(10) , PRIMARY KEY (`Id`)) ENGINE = InnoDB;

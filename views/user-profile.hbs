@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user-profile.css"/>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+    
+        <form action="/auth/user-profile" method="POST" enctype="multipart/form-data">
+            <h3>Upload Profile Photo</h3>
+            <input type="file" name="sampleFile" accept="image/*" />
+            <input type="submit" class="btn btn-primary" />
+        </form>
+
+        <div class="card"> 
+            <img class="card__image" src="/img/default.jpg" alt="User Profile"/>
+            <h1 class="card__title">Raddy</h1>
+            <div class="card__job">Web Devoloper</div>
+            <p class="card__about">
+                Hi! I'm Raddy. I am a web developer, often making Youtube Videos, Blog Posts and side projects. Please follow
+                me on
+                social @raddythebrand and don't forget to subscribe!
+            </p>
+
+            <button type="button" class="btn btn-primary">View Profile</button>
+
+        </div>
+    
+    
+    </div>
+    
+</body>
+
+</html>

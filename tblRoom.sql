@@ -1,0 +1,1 @@
+CREATE TABLE `login-system`.`tblroom` ( `Room_ID` VARCHAR(20) NOT NULL , `NMembersActive` INT(50) NOT NULL , PRIMARY KEY (`Room_ID`)) ENGINE = InnoDB;

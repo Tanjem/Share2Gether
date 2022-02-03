@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #00476b;
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+}
+
+
+
+
+
+a  {
+    text-decoration: none;
+    color: #222; 
+}
+
+li, ul, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+header {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+
+}
+
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 2px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: #00476b;
+}
+
+
+header button {
+    
+    padding: 5px 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    color: #222;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease 0s;
+    
+}
+
+header button:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
+
+
+.logo {
+
+    width: 25%;
+    height: auto;
+    margin-bottom: 25px;
+    background-repeat: no-repeat;
+    
+
+}
+
+
+
+
+
+
+
+
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center .guest_btn {
+
+    padding: 10px 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background-color: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-right: 10px;
+    
+}
+
+.center .register_btn {
+
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+    background-color: #f5f5f5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+
+.popup {
+
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+
+}
+
+.popup .form {
+
+    max-width: 600px;
+    width: 100%;
+    background-color: #00c28a;
+    padding: 25px 35px;
+    border-radius: 20px;
+    border:1px solid #222;
+
+  
+}
+
+.popup .form .title_register {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup form .user-details {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+}
+
+form .user-details .form-element {
+    margin-bottom: 10px;
+    width: calc(100% / 2 - 15px);
+}
+
+.user-details .form-element .form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .form-element input {      /* form box where user input goes*/
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .form-element input:focus,
+.user-details .form-element input:valid {
+    border-color:#00476b;
+}
+
+.user-details .gender-details .gender-title{
+    font-size: 17px;
+}
+
+.user-details .gender-details .form-input {
+    display: flex;
+    height: 35px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+
+}
+
+
+
+.popup .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.nav-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.nav-background svg {
+    position: relative;
+    display: block;
+    width: calc(137% + 1.3px);
+    height: 106px;
+    transform: rotateY(180deg);
+}
+
+.nav-background .shape-fill {
+    fill: #00c28a;
+}
+
+
+
+
+
+
+
+/** For mobile devices **/
+
+

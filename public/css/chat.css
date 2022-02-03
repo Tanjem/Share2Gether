@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+body {
+    background-color: #00476b;
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+}
+
+
+
+/*------------------------ Chat Button ------------------------*/
+
+#submit-btn {
+
+    background: #289274;
+    color: #f5f5f5;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background .3s ease;
+    padding: 10px;
+
+}
+
+#submit-btn:hover {
+    background: #1c634f;
+}
+
+#submit-btn:disabled {
+    background: #289274;
+    cursor: disabled;
+}
+
+
+
+/*------------------------ Join Chat Button ------------------------*/
+
+
+.form-field button {
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 10px;
+    transition: background .3s ease;
+
+}
+
+.form-field button:hover {
+    background: gray;
+}
+
+.form-field button:disabled {
+    cursor: disabled;
+    background: #222;
+}
+
+
+/*------------------------ Nav-Background-Picture ------------------------*/
+
+.nav-background {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.nav-background svg {
+    position: relative;
+    display: block;
+    width: calc(137% + 1.3px);
+    height: 106px;
+    transform: rotateY(180deg);
+}
+
+.nav-background .shape-fill {
+    fill: #00c28a;
+}
+
+
+
+/* ------------------------ Join Chat Form ------------------------ */
+
+.centered-form {
+    display: flex;
+    align-items: center;
+    height:100vh;
+    width:100vw;
+    justify-content:center;
+}
+
+.centered-form__form {
+    
+    background-color: #00c28a;
+    border:1px solid #222;
+    border-radius: 20px;
+    padding:0 20px;
+    margin:20px;
+    width:230px;
+
+}
+
+.form-field { 
+    margin: 20px 0
+}
+
+
+.form-field > * {
+    width:100%
+}
+
+.form-field label {
+    display:block;
+    margin-bottom: 10px;
+}
+
+.form-field input,
+.form-field select {
+    height: 35px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field input:valid {
+    border-color:#00476b;
+}
+
+
+/*------------------------ ------------------------*/
+
+.chat__messages,
+.chat__sidebar ul {
+    list-style-type:none
+
+} * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+li, ul {
+    list-style-position: inside;
+}
+
+h3 {
+    font-weight: 500;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+/*------------------------ People List Box ------------------------*/
+
+
+.chat {
+    display:flex;
+}
+
+.chat__sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.chat__sidebar {
+
+    overflow-y:scroll;
+    position: fixed;
+    align-self: flex-start;
+    top: 35px;
+    right: 50px;
+    width:20vh;                        /* Before: 260px */ /* 25vh */
+    height:30vh;                       /* Before: 100vh */
+    background-color: #289274;
+    border:1px solid #222;
+    box-shadow: 0px 1px 10px 2px #289274;
+
+
+    margin: 50px;
+    border-radius: 8px;
+
+}
+
+.chat_sidebar_title {
+
+    justify-content: center;
+    position: sticky;
+    z-index: 1;
+
+}
+
+.chat__footer,
+.chat__sidebar li {
+
+    background:#e6eaee;
+    padding:10px;
+
+}
+
+.chat__sidebar h3 {
+
+    color:#e6eaee;
+    margin: 10px 20px;
+    text-align: center;
+}
+
+.chat__sidebar li {
+
+    border:1px solid #e1e1e1;
+    border-radius:5px;
+    margin:10px 25px 20px 25px;
+
+}
+
+
+
+
+
+.chat__main {
+
+    display: flex;
+    flex-direction:column;
+    position: fixed;
+    height:50vh;
+    width: 25vh;
+    margin: 50px;
+
+    border-radius: 8px;
+    border:1px solid #222;
+    box-shadow: 0px 1px 10px 2px #289274;
+    background-color: #289274;
+
+
+
+    align-self: flex-end;
+    right: 20px;
+
+}
+
+
+
+.chat__messages {
+
+    flex-grow:1;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling:touch;
+    padding:10px
+}
+
+.chat__messages::-webkit-scrollbar {
+    width: 17px;
+}
+
+.chat__messages:-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.chat__messages::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+
+}
+
+.chat__messages::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
+}
+
+.chat__footer {
+    display:flex;
+    position: relative;
+    flex-shrink:0
+}
+
+.chat__footer form {
+    flex-grow:1;
+    display:flex
+}
+
+.chat__footer form * {
+    margin-right:10px
+}
+
+.chat__footer input{
+    border:none;
+    padding:10px;
+    flex-grow:1
+}
+
+.message{
+    padding:10px
+}
+
+.message__title {
+    display:flex;
+    margin-bottom:5px
+}
+
+.message__title h4 { 
+    font-weight:600;
+    margin-right:10px
+}
+
+.message__title span {
+    color:#999
+}
+
+@media (max-width:600px) {
+
+    *{font-size:1rem}
+
+.chat__sidebar {
+    display:none
+}
+.chat__footer {
+    flex-direction:column
+}
+.chat__footer form {
+    margin-bottom:10px
+}
+.chat__footer button {
+    margin-right:0 
+}
+}
+
+
+
+.videoSearchBar {
+    display: flex;
+    width: 60vh;
+    height: 3vh;
+    margin: 50px;
+    
+}
+
+.videoSearchBtn {
+    display: flex;
+    width: 20px;
+    height: 3vh;
+    margin: 20px;
+
+}
+
+
+
+.videoWrapper {
+
+    width: 100%;
+    height: auto;
+    
+    
+}
+
+.videoWrapper iframe {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
