@@ -76,8 +76,6 @@ exports.profileget = async (req, res) => {
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
-        console.log('Connected!!!!!!') //Verification (delete)
-
         connection.query('SELECT * FROM tblaccount WHERE Id = "24"', (err, rows) => {
             if(!err) {
                 res.render('user-profile', { rows });
