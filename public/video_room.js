@@ -75,7 +75,8 @@ document.getElementById("pause").addEventListener("click", function() {
 })
 
 document.getElementById("search_btn").addEventListener("click", function() {
-    socket.emit("videoEvent", document.getElementById("vid_id_input").value)
+    let videoId = YouTubeGetID(document.getElementById("vid_id_input").value) 
+    socket.emit("videoEvent", videoId)
 })
 
 
