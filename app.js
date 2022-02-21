@@ -36,16 +36,19 @@ io.on('connection', (socket) => {
         if(!isRealString(params.name) || !isRealString(params.room)) {                
             return callback('Name and room are required');
         }
- 
-        socket.join(params.room);                                                     //Join Room variable "params.room"
-        users.removeUser(socket.id);                                                  //Removes a user from any other room if joins a new room - users.js
-        users.addUser(socket.id, params.name, params.room);                           //Creating a new user - users.js
+         //Join Room variable "params.room"
+        socket.join(params.room);       
+        //Removes a user from any other room if joins a new room                                            
+        users.removeUser(socket.id);                 
+        //Creating a new user                             
+        users.addUser(socket.id, params.name, params.room);                           
 
-        
-        io.to(params.room).emit('updateUsersList', users.getUserList(params.room));                              //Update user list - users.js & message_room.js
-        socket.emit('newMessage', generateMessage('Admin', `Welcome to room ${params.room}!`));                  //Admin Message of welcome - message.js  & message_room.js
-        
-        socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', "New User Joined!"));       //Message when new user Joins a room - message.js  & message_room.js
+        //Update user list
+        io.to(params.room).emit('updateUsersList', users.getUserList(params.room));   
+        //Admin Message of welcome                          
+        socket.emit('newMessage', generateMessage('Admin', `Welcome to room ${params.room}!`));                  
+        //Message when new user Joins a room
+        socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', "New User Joined!"));       
 
         callback();
 
@@ -56,8 +59,9 @@ io.on('connection', (socket) => {
 
         let user = users.getUser(socket.id);                                  
 
+        //generating messages between users
         if(user && isRealString(message.text)) {                                                     
-            io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));            //Generating message
+            io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));          
         }
 
     });
@@ -67,9 +71,12 @@ io.on('connection', (socket) => {
         let user = users.removeUser(socket.id);
 
         if(user) {
-            io.to(user.room).emit('updateUsersList', users.getUserList(user.room));                                            //Updating the user list & Remove
-            io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has left ${user.room} chat room.`))     //Displaying message to the chat user has left
+            //Updating the user list & Remove
+            io.to(user.room).emit('updateUsersList', users.getUserList(user.room));     
+            //Displaying message to the chat user has left                                       
+            io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has left ${user.room} chat room.`))     
         }
+
     });
 
     socket.on('playerEvent', function(event) {
@@ -107,10 +114,11 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 
 
+//engine for html
+app.set('view engine', 'hbs')       
 
-app.set('view engine', 'hbs')       //what kind of engine for our html
-
-pool.getConnection((error) => {     //Validate if the server is connnected to mysql
+//Validate if the server is connnected to mysql
+pool.getConnection((error) => {     
 
     if(error) {
         console.log(error)
@@ -128,9 +136,10 @@ const userRoutes = require('./routes/users');
 const router = require("./routes/auth");
 // const userProfileRoutes = require('./routes/userProfileRoutes');
 
-
-app.use('/', routes); // Connects and renders the different pages of html
-app.use('/auth', authRoutes); // Connect values/data from the html to the auth file
+// Connects and renders the different pages of html
+app.use('/', routes); 
+// Connect values/data from the html to the auth file
+app.use('/auth', authRoutes); 
 app.use('/', userRoutes);
 // app.use('/', userProfileRoutes);
 
