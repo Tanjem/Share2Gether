@@ -1,6 +1,7 @@
 let socket = io();
 
-// 2. This code loads the IFrame Player API code asynchronously.
+
+// This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -12,7 +13,7 @@ var duration;
 
 
 
-// 3. This function creates an <iframe> (and YouTube player)
+// This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 function onYouTubeIframeAPIReady() {
 
@@ -36,12 +37,13 @@ function onYouTubeIframeAPIReady() {
 
 }
 
-// 4. The API will call this function when the video player is ready.
+// The API will call this function when the video player is ready.
 function onPlayerReady(event) {
   event.target.playVideo();
 }
 
 
+// The API calls this function when the player's state changes.
 function onPlayerStateChange(event) {
 
   if (event.data = 1) {
@@ -60,7 +62,7 @@ function onPlayerStateChange(event) {
 
 }
 
-
+// Youtube Link -> Youtube Video ID
 function YouTubeGetID(url) {
     
   var ID = '';
