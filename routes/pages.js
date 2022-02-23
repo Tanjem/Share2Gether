@@ -24,10 +24,6 @@ router.get('/video_room', (req, res) => {
     res.render('video_room')
 })
 
-router.get('/user-profile', (req, res) => {
-    res.render('user-profile')
-})
-
 
 
 module.exports = router; //export the routes

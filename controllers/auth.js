@@ -40,7 +40,6 @@ exports.login = async (req, res)  => {
                 else {
                     const id = results[0].Id;
             
-
                     const token = jwt.sign({ id }, process.env.JWT_SECRET, {                    //assigning a cookie token to the User Id
                         expiresIn: process.env.JWT_EXPIRE_IN
                     });
@@ -51,6 +50,7 @@ exports.login = async (req, res)  => {
                         httpOnly: true,
                     }
                     res.cookie('jwt', token, cookieOptions);
+                    res.cookie('id', id, cookieOptions)
 
                     if (results[0].email == "tanjemjobab2003@gmail.com") {
                         res.status(200).redirect("/admin_page")                                //Redirect user to page
@@ -71,50 +71,50 @@ exports.login = async (req, res)  => {
 
 };
 
-exports.profileget = async (req, res) => {
+// exports.profileget = async (req, res) => {
 
-    pool.getConnection((err, connection) => {
-        if(err) throw err;
+//     pool.getConnection((err, connection) => {
+//         if(err) throw err;
 
-        connection.query('SELECT * FROM tblaccount WHERE Id = "24"', (err, rows) => {
-            if(!err) {
-                res.render('user-profile', { rows });
-            }
-        })
-
-
-    })
-
-}
-
-exports.profile = async (req, res)  => {
-
-    pool.getConnection((err, connection) => {
-
-        let sampleFile;
-        let uploadPath;
-
-        if(!req.files || Object.keys(req.files).length === 0) {
-            return res.status(400).send('No files were uploaded');
-        }
-
-        //name of the input is sampleFile
-        sampleFile = req.files.sampleFile;
-        uploadPath = 'O:\\Documents\\Computer Science\\PROJECT FOLDER 6\/public/images/UploadPFP/' + sampleFile.name
-        console.log(sampleFile);
-
-        // Use mv() to place file on the server
-        sampleFile.mv(uploadPath, function(err) {
-            if (err) return res.status(500).send(err);
-
-            res.send('File Uploaded!')
-        });
-
-    });
+//         connection.query('SELECT * FROM tblaccount WHERE Id = "24"', (err, rows) => {
+//             if(!err) {
+//                 res.render('user-profile', { rows });
+//             }
+//         })
 
 
+//     })
 
-}
+// }
+
+// exports.profile = async (req, res)  => {
+
+//     pool.getConnection((err, connection) => {
+
+//         let sampleFile;
+//         let uploadPath;
+
+//         if(!req.files || Object.keys(req.files).length === 0) {
+//             return res.status(400).send('No files were uploaded');
+//         }
+
+//         //name of the input is sampleFile
+//         sampleFile = req.files.sampleFile;
+//         uploadPath = 'O:\\Documents\\Computer Science\\PROJECT FOLDER 6\/public/images/UploadPFP/' + sampleFile.name
+//         console.log(sampleFile);
+
+//         // Use mv() to place file on the server
+//         sampleFile.mv(uploadPath, function(err) {
+//             if (err) return res.status(500).send(err);
+
+//             res.send('File Uploaded!')
+//         });
+
+//     });
+
+
+
+// }
 
 
 exports.register = async (req, res)  => {
@@ -178,3 +178,11 @@ exports.register = async (req, res)  => {
 
 };
 
+
+exports.logout = (req,res) => {
+
+    res.clearCookie('jwt');
+    res.clearCookie('id')
+    res.redirect('/login');
+
+};

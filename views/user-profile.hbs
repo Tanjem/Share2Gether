@@ -13,23 +13,35 @@
 
     <div class="wrapper">
     
-        <form action="/auth/user-profile" method="POST" enctype="multipart/form-data">
+        <form action="/user-profile" method="POST" enctype="multipart/form-data">
             <h3>Upload Profile Photo</h3>
             <input type="file" name="sampleFile" accept="image/*" />
             <input type="submit" class="btn btn-primary" />
         </form>
 
         <div class="card"> 
-            <img class="card__image" src="/img/default.jpg" alt="User Profile"/>
-            <h1 class="card__title">Raddy</h1>
-            <div class="card__job">Web Devoloper</div>
-            <p class="card__about">
-                Hi! I'm Raddy. I am a web developer, often making Youtube Videos, Blog Posts and side projects. Please follow
-                me on
-                social @raddythebrand and don't forget to subscribe!
-            </p>
 
-            <button type="button" class="btn btn-primary"><a href="joinCreate_room">Create/Join Room</a></button>
+            <button type="button" class="btn btn-primary"><a href="auth/logout">logout</a></button>
+
+
+            {{#each rows}}
+
+                {{#if this.profile_image}}
+                    <img class="card__image" src="{{this.profile_image}}" alt="User Profile">
+                {{else}}
+                    <img class="card__image" src="/img/default.jpg" alt="User Profile">
+                {{/if}}
+
+
+                <h1 class="card__title">{{this.FName}}</h1>
+                <div class="card__job">{{this.email}}</div>
+                <p class="card__about">{{this.DOB}}</p>
+                <button type="button" class="btn btn-primary"><a href="joinCreate_room">Create/Join Room</a></button>
+
+
+            {{/each}}
+
+
 
         </div>
     

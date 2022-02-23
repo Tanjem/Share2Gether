@@ -101,7 +101,7 @@ const pool = mysql.createPool({
 
 const publicDirectory = path.join(__dirname, './public')            //Default start at "public" folder
 app.use(express.static(publicDirectory));                           //to give express access to the publicdirectory
-
+app.use(express.static('upload'));
 
 //Parse URL-encoded bodies (as sent by HTLM forms) to make sure that we can grab the data from any FORMS html
 app.use(express.urlencoded({extended: false}));
@@ -134,74 +134,12 @@ const routes = require('./routes/pages');
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
 const router = require("./routes/auth");
-// const userProfileRoutes = require('./routes/userProfileRoutes');
 
 // Connects and renders the different pages of html
 app.use('/', routes); 
 // Connect values/data from the html to the auth file
 app.use('/auth', authRoutes); 
 app.use('/', userRoutes);
-// app.use('/', userProfileRoutes);
-
-
-
-
-
-
-// app.get('/user-profile', (req, res) => {
-//     connection.query('SELECT * FROM tblaccount WHERE Id = 24', (err, rows) => {
-//         if(!err) {
-//             res.render('user-profile', { rows })
-//         }
-//     });
-// });
-
-// app.post('/user-profile', (req, res) => {
-
-//     let sampleFile;
-//     let uploadPath;
-
-//     if(!req.files || Object.keys(req.files).length === 0) {
-//         return res.status(400).send('No files were uploaded.')
-//     }
-
-//     sampleFile = req.files.sampleFile;
-//     console.log(sampleFile);
-
-
-
-
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 server.listen(5069, () => {
     console.log("Server started on Port 5069"); // Connecting to the port starting server
