@@ -6,7 +6,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');                         
 const socketIO = require("socket.io");
 const http = require("http");   
-const fileUpload = require("express-fileupload");                                    
+const fileUpload = require("express-fileupload");
+const nodemailer = require('nodemailer');                                    
 
 const { generateMessage } = require("./public/utils/message");      
 const { isRealString } = require('./public/utils/isRealString')     
@@ -144,3 +145,33 @@ app.use('/', userRoutes);
 server.listen(5069, () => {
     console.log("Server started on Port 5069"); // Connecting to the port starting server
 });
+
+
+app.post('/contact_admin', (req, res) => {
+
+    const transport = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'share2gether.test@gmail.com',
+            pass: 'share2gether123'
+        }
+    })
+
+    const mailOptions = {
+        from: req.body.email,
+        to: 'share2gether.test@gmail.com',
+        subject: `Message from ${req.body.email}: ${req.body.subject}`,
+        text: req.body.message
+    }
+
+    transport.sendMail(mailOptions, (error, info)=> {
+        if(error) {
+            console.log(error);
+            res.send('error')
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.send('success')
+        }
+    })
+
+})

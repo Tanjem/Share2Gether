@@ -6,6 +6,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 
@@ -15,8 +17,6 @@ body {
     font-family: "Montserrat", sans-serif;
     height: 100vh;
 }
-
-
 
 
 
@@ -33,17 +33,26 @@ li, ul, a, button {
 
 }
 
-header {
+header, footer {
 
     display: flex;
+    position: absolute;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 10%;
+    padding: 75px 150px;
 
 }
 
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+}
 
-.nav-links {
+
+
+/* .nav-links {
     list-style: none;
 }
 
@@ -58,7 +67,7 @@ header {
 
 .nav-links li a:hover {
     color: #00476b;
-}
+} */
 
 
 header button {
@@ -82,18 +91,29 @@ header button:hover {
 }
 
 
-.logo {
+.title h2 {
 
-    width: 25%;
-    height: auto;
-    margin-bottom: 25px;
-    background-repeat: no-repeat;
-    
-
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 64px;
+    font-weight: bold;
+    align-items: center;
+    min-height: 45px;
+    padding-left: 740px;
+    padding-top: 200px;
 }
 
+.title p {
 
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    align-items: center;
+    padding-left: 600px;
 
+}
 
 .center {
     position: absolute;
@@ -131,7 +151,76 @@ header button:hover {
 
 }
 
+footer {
 
+    bottom: 0;
+    min-height: 80px;
+    padding: 0px;
+
+}
+
+footer h2 {
+    font-size: 15px;
+    margin-top: 37px;
+    margin-left: 200px;
+    padding-left: 150px;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+footer ul.social_icon {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px;
+    padding-top: 30px;
+    margin-right: 1100px;
+
+
+}
+
+
+footer ul.social_icon a{
+
+    font-size: 15px;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+
+}
+
+footer ul.social_icon a:hover{
+  transform: translateY(-5px);
+}
+
+.footer-background {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+    transform: scaleY(-1);
+
+}
+
+.footer-image {
+    position: relative;
+    display: block;
+    width: calc(137% + 1.3px);
+    height: 80px;
+    transform: rotateY(180deg);
+}
+
+.footer-background .shape-fill {
+    fill: #00c28a;
+}
 
 
 
@@ -146,10 +235,6 @@ header button:hover {
     display: flex;
     align-items: center;
     
-   
-
-
-
 }
 
 

@@ -71,50 +71,6 @@ exports.login = async (req, res)  => {
 
 };
 
-// exports.profileget = async (req, res) => {
-
-//     pool.getConnection((err, connection) => {
-//         if(err) throw err;
-
-//         connection.query('SELECT * FROM tblaccount WHERE Id = "24"', (err, rows) => {
-//             if(!err) {
-//                 res.render('user-profile', { rows });
-//             }
-//         })
-
-
-//     })
-
-// }
-
-// exports.profile = async (req, res)  => {
-
-//     pool.getConnection((err, connection) => {
-
-//         let sampleFile;
-//         let uploadPath;
-
-//         if(!req.files || Object.keys(req.files).length === 0) {
-//             return res.status(400).send('No files were uploaded');
-//         }
-
-//         //name of the input is sampleFile
-//         sampleFile = req.files.sampleFile;
-//         uploadPath = 'O:\\Documents\\Computer Science\\PROJECT FOLDER 6\/public/images/UploadPFP/' + sampleFile.name
-//         console.log(sampleFile);
-
-//         // Use mv() to place file on the server
-//         sampleFile.mv(uploadPath, function(err) {
-//             if (err) return res.status(500).send(err);
-
-//             res.send('File Uploaded!')
-//         });
-
-//     });
-
-
-
-// }
 
 
 exports.register = async (req, res)  => {

@@ -2,7 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-const authController = require('../controllers/auth');
 
 router.get('/', (req, res) => {
     res.render('index');
@@ -24,6 +23,8 @@ router.get('/video_room', (req, res) => {
     res.render('video_room')
 })
 
-
+router.get('/contact_admin', (req, res) => {
+    res.render('contact_admin')
+})
 
 module.exports = router; //export the routes
