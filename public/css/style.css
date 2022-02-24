@@ -341,7 +341,9 @@ form .user-details .form-element {
     cursor: pointer;
 }
 
-
+.popup .form .form-element button:hover {
+    opacity: 0.8;
+}
 
 /* Main page navigation bar */
 

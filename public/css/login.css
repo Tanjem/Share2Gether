@@ -163,3 +163,7 @@ form .user-details .form-element {
     border-radius: 10px;
     cursor: pointer;
 }
+
+.popup .form .form-element button:hover {
+    opacity: 0.8;
+}
