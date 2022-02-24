@@ -29,7 +29,6 @@ li, ul, a, button {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    text-decoration: none;
 
 }
 
@@ -49,25 +48,6 @@ header {
     display: flex;
     justify-content: flex-end;
 }
-
-
-
-/* .nav-links {
-    list-style: none;
-}
-
-.nav-links li {
-    display: inline-block;
-    padding: 2px 20px;
-}
-
-.nav-links li a {
-    transition: all 0.3s ease 0s;
-}
-
-.nav-links li a:hover {
-    color: #00476b;
-} */
 
 
 header button {
@@ -230,12 +210,26 @@ footer ul.social_icon a:hover{
 
 /* ---------------- Registration Form ---------------- */
 
+.breadcrumb-nav {
 
+    display: flex;
+    width: 100%;
+    padding-left: 300px;
+    padding-top: 100px;
+   
+
+}
 
 .breadcrumb {
 
     display: flex;
     align-items: center;
+    background-color: #ccc;
+    max-width: 400px;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 20px;
     
 }
 
@@ -248,7 +242,7 @@ footer ul.social_icon a:hover{
     height: 100vh;
     justify-content: center;
     align-items: center;
-    padding-left: 500px;
+    padding-left: 150px;
     z-index: -2;
 
 }

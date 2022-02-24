@@ -27,4 +27,6 @@ router.get('/contact_admin', (req, res) => {
     res.render('contact_admin')
 })
 
+
+
 module.exports = router; //export the routes

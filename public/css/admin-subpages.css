@@ -1,0 +1,26 @@
+
+
+
+
+.breadcrumb-nav {
+
+    display: flex;
+    width: 100%;
+    padding-left: 300px;
+    padding-top: 100px;
+   
+
+}
+
+.breadcrumb {
+
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    max-width: 400px;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 20px;
+    
+}
