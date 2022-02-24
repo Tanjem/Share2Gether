@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+.nav-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.nav-background svg {
+    position: relative;
+    display: block;
+    width: calc(137% + 1.3px);
+    height: 106px;
+    transform: rotateY(180deg);
+}
+
+.nav-background .shape-fill {
+    fill: #00c28a;
+}
+
+
+body {
+    display: flex;
+    background-color: #00476b;
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+}
+
+
+
+a  {
+    text-decoration: none;
+    color: #222; 
+}
+
+li, ul, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+
+.breadcrumb {
+
+    display: flex;
+    align-items: center;
+    
+}
+
+
+.popup {
+
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding-left: 700px;
+    z-index: -2;
+
+}
+
+.popup .form {
+
+    max-width: 600px;
+    width: 100%;
+    background-color: #00c28a;
+    padding: 25px 35px;
+    border-radius: 20px;
+    border:1px solid #222;
+
+  
+}
+
+.popup .form .title_register {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+    color: #222;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+
+.popup form .user-details {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+
+}
+
+form .user-details .form-element {
+    margin-bottom: 10px;
+    width: calc(100% / 2 - 15px);
+}
+
+.user-details .form-element .form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.user-details .form-element input {      /* form box where user input goes*/
+    height: 35px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .form-element input:focus,
+.user-details .form-element input:valid {
+    border-color:#00476b;
+}
+
+.user-details .gender-details .gender-title{
+    font-size: 17px;
+}
+
+.user-details .gender-details .form-input {
+    display: flex;
+    height: 35px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+
+}
+
+
+
+.popup .form .form-element button {
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: #222;
+    color: #f5f5f5;
+    border-radius: 10px;
+    cursor: pointer;
+}

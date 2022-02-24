@@ -91,6 +91,8 @@ header button:hover {
 }
 
 
+
+
 .title h2 {
 
     display: flex;
@@ -246,6 +248,7 @@ footer ul.social_icon a:hover{
     height: 100vh;
     justify-content: center;
     align-items: center;
+    padding-left: 500px;
     z-index: -2;
 
 }
@@ -339,6 +342,10 @@ form .user-details .form-element {
 }
 
 
+
+/* Main page navigation bar */
+
+
 .nav-background {
     position: absolute;
     top: 0;
@@ -363,10 +370,5 @@ form .user-details .form-element {
 
 
 
-
-
-
-
-/** For mobile devices **/
 
 
