@@ -185,8 +185,8 @@ h3 {
     position: fixed;
     align-self: flex-start;
     top: 35px;
-    right: 50px;
-    width:20vh;                        /* Before: 260px */ /* 25vh */
+    right: 100px;
+    width:30vh;                        /* Before: 260px */ /* 25vh */
     height:30vh;                       /* Before: 100vh */
     background-color: #289274;
     border:1px solid #222;
@@ -230,6 +230,7 @@ h3 {
 }
 
 
+/*------------------------ Chat List Box ------------------------*/
 
 
 
@@ -239,7 +240,7 @@ h3 {
     flex-direction:column;
     position: fixed;
     height:50vh;
-    width: 25vh;
+    width: 30vh;
     margin: 50px;
 
     border-radius: 8px;
@@ -250,7 +251,7 @@ h3 {
 
 
     align-self: flex-end;
-    right: 20px;
+    right: 100px;
 
 }
 
@@ -343,15 +344,30 @@ h3 {
 
 
 
+
+
+
+
+
+
+
+
+
+
 .videoSearchBar {
+
     display: flex;
     width: 60vh;
     height: 3vh;
-    margin: 50px;
+    margin: 60px;
+    position: absolute;
+    right: 63.2%;
+    bottom: 87%;
     
 }
 
 .videoSearchBtn {
+
     display: flex;
     width: 20px;
     height: 3vh;
@@ -360,12 +376,10 @@ h3 {
 }
 
 
-
 .videoWrapper {
 
     width: 100%;
     height: auto;
-    
     
 }
 
@@ -373,4 +387,71 @@ h3 {
     max-width: 100%;
     height: auto;
     aspect-ratio: 16/9;
+}
+
+
+.player {
+    position: absolute;
+    bottom: 16%;
+    right: 30%;
+}
+
+
+
+
+#search_btn {
+
+    position: absolute;
+    left: 35%;
+    bottom: 93.5%;
+
+}
+
+
+
+
+
+#cont {
+	width: 800px; 
+	margin: 30px auto;
+}
+
+#player {
+	pointer-events: none; 
+	display: block; 
+	width: 1280px;
+	height: 720px;
+}
+
+#control_cont {
+	margin-top: 15px;
+	width: 800px;
+	position: absolute;
+    bottom: 10%;
+    right: 55%;
+}
+
+#line {
+	height: 4px;
+	background: white;
+	width:  83%;
+	margin-left: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+
+#square {
+	background: #0099cc;
+	height: 20px;
+	width: 20px;
+	border-radius: 3px;
+	display: inline-block;
+	margin-left: -669px;
+	vertical-align: middle;
+	position: relative;
+}
+
+#search {
+	margin: 30px 100px;
 }
