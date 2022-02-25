@@ -1,11 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 
+
 body {
     background-color: #00476b;    
     font-family: "Montserrat", sans-serif;
     margin: 0;
 }
+
+a  {
+    text-decoration: none;
+    color: #222; 
+}
+
+h3 {
+    margin: 10px;
+    margin-left: 90px;
+}
+
+
+.nav-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.nav-background svg {
+    position: relative;
+    display: block;
+    width: calc(137% + 1.3px);
+    height: 106px;
+    transform: rotateY(180deg);
+}
+
+.nav-background .shape-fill {
+    fill: #00c28a;
+}
+
+
+
+
 
 img {
     width: 100%;
@@ -18,6 +56,8 @@ img {
 }
 
 .btn {
+
+    background-color: #008cba;
     border: none;
     color: #fff;
     padding: 15px 32px;
@@ -28,22 +68,77 @@ img {
     margin: 4px 2px;
     cursor: pointer;
     width: 100%;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
-.btn-primary {
-    background-color: #008cba;
+.btn:hover {
+    opacity: 0.9;
 }
+
+.logout-btn {
+
+    background-color: #222;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #f5f5f5;
+    border: none;
+    outline: none;
+    font-size: 15px;
+
+}
+
+.room-btn {
+
+    background-color: #00c28a;
+    max-width: 200px;
+    border: none;
+    color: #fff;
+    font-style: 16px;
+    position: absolute;
+    left: 64.5%;
+    bottom: 45%;
+
+}
+
+.room-btn a {
+    color: white;
+}
+
+
+form {
+
+    position: absolute;
+    left: 60%;
+    top: 35%;
+
+}
+
+form input {
+    padding-bottom: 5px;
+    margin-left: 2px;
+}
+
+.logout-btn a {
+    color: #ccc;
+}
+
+.logout-btn a:hover {
+    opacity: 0.8;
+}
+
 
 .card {
+
     text-align: center;
     margin: 0 auto;
     width: 400px;
     padding: 20px;
     border-radius: 5px;
+    border:1px solid #222;
     box-shadow: 0 10px 20px rgba(0,0,0,0), 0 6px 36px rgba(0, 0, 0, 0.13);
-    background-color: #fff;
-
+    background-color: #00476b;
+    margin-top: 250px;
+    margin-left: 600px;
 }
 
 .card__image {
@@ -55,7 +150,7 @@ img {
     overflow: hidden;
     object-fit: cover;
     box-shadow: 0 10px 20px rgba(0,0,0,0), 0 6px 36px rgba(0, 0, 0, 0.13);
-    border: 3px solid #fff;
+    border: 3px solid #ccc;
 }
 
 .card__title {
@@ -63,5 +158,6 @@ img {
 }
 
 .card__job {
+    padding-top: 5px;
     color: #6e8192;
 }
