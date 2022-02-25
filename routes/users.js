@@ -15,7 +15,7 @@ router.post('/adduser', userController.create);
 router.get('/edituser/:Id', userController.edit);
 router.post('/edituser/:Id', userController.update);
 router.get('/viewuser/:Id', userController.viewall);
-// router.get('/:Id', userController.delete);
+router.get('/:Id', userController.delete);
 
 
 
