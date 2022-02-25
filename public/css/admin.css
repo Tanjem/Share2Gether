@@ -4,12 +4,25 @@
 body {
     background-color: #00476b;
     font-family: "Montserrat", sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+a  {
+    text-decoration: none;
+    color: #222; 
 }
 
 /*------------------------ Nav-Background-Picture ------------------------*/
 
+.navbar {
+    display: flex;
+}
+
+
 .nav-background {
 
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
@@ -31,6 +44,7 @@ body {
     fill: #00c28a;
 }
 
+
 .navbar-title {
     text-decoration: none;
     color: black;
@@ -40,19 +54,131 @@ body {
     color: #00c28a;
 }
 
-.container-table {
-    margin-top: 50px;
+
+
+/*------------------------ Nav-Breadcrumb ------------------------*/
+
+
+
+.breadcrumb-nav {
+
+    display: flex;
+    width: 100%;
+    padding-left: 100px;
+    padding-top: 50px;
+  
 }
+
+.breadcrumb {
+
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    max-width: 330px;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 20px;
+    margin-bottom: 45px;
+}
+
+
+li .breadcrumb-item {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+
+
+
+
+
+.admin_profile {
+    padding-top: 14px;
+}
+
+
+
+.adminprofile_btn {
+
+    background-color: #ccc;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    border-color: #222;    
+    transition: 0s;
+    padding: 5px;
+    border-radius: 2px;
+
+}
+
+
+
+.adminprofile_btn:hover {
+
+    background-color: #ccc;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    border-color: #222;    
+    opacity: 0.8;
+}
+
+
+
+.divadduser_button {
+    display: flex;
+    justify-content: center;
+    margin-right: 130px;
+    margin-left: 22px;
+    padding-top: 14px;  
+    padding-right: 50px;  
+
+}
+
+.divadduser_button a {
+
+    background-color: #ccc;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    border-color: #222;    
+    transition: 0s;
+
+}
+
+.divadduser_button a:hover {
+    background-color: #ccc;
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    border-color: #00476b;
+    opacity: 0.8;
+} 
+
+
+
+
+
+
+
+
+
+
 
 .container {
     display: flex;
-
 }
 
 .container-table {
 
-    margin-top: 100px;
+    margin-top: 15px;
+    margin-left: 160px;
 
+}
+
+.container-table h1 {
+    background-color: #00c28a;
+    max-width: 235px;
+    border-radius: 5px;
+    font-weight: 900;
 }
 
 .table {
@@ -80,4 +206,20 @@ body {
 .action-btn {
     background-color: grey;
     justify-content: space-evenly;
+}
+
+
+.search-bar {
+    display: flex;
+    padding-left: 20px;
+    padding-top: 15px ;
+    
+}
+
+.searchuser_bar {
+    background-color: #ccc;
+}
+
+.searchuser_bar:hover {
+    background-color: #ccc;
 }

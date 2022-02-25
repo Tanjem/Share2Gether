@@ -18,6 +18,8 @@
 
 <body>
 
+    
+
     <nav class="navbar navbar-expand-lg">
 
         <div class="nav-background">
@@ -35,11 +37,14 @@
             </svg>
         </div>
 
-
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/login">Login</a></li>
+                <li class="breadcrumb-item active" aria-current="page">User Management System</li>
+            </ol>
+        </nav>
 
         <div class="container-fluid">
-
-            <a class="navbar-title" href="/">User Management System</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 
@@ -48,23 +53,29 @@
                 <span class="navbar-toggler-icon"></span>
 
             </button>
+
+            <div class="admin_profile">
+                <a class="adminprofile_btn" href="user-profile" type="button">Admin Profile</a>
+            </div>
+
+            <div class="row">
+                <div class="divadduser_button"><a href="/adduser" type="button" class="btn btn-primary align-self-center">+ Add User</a>
+                </div>
+            </div>
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    </li>
-                </ul>
-
-                <form class="d-flex" method="POST" action="admin_page" novalidate>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                <form class="search-bar" method="POST" action="admin_page" novalidate>
+                    <input class="form-control me-2 searchuser_bar" type="search" placeholder="Search User" aria-label="Search"
                         name="search">
                     <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
 
             </div>
         </div>
+
+
+
     </nav>
 
     {{#if removedUser}}
@@ -74,18 +85,12 @@
     </div>
     {{/if}}
 
-    <div class="row">
-        <div class="col-6 d-flex justify-content-end"><a href="/adduser" type="button"
-                class="btn btn-primary align-self-center">+ Add User</a>
-        </div>
-    </div>
-
  
     <div class="container">
 
         <div class="container-table">
 
-            <h1>Users</h1>
+            <h1>Users Table</h1>
 
             <table class="table">
 
