@@ -98,12 +98,12 @@ exports.edit = (req, res) => {
 
 exports.update = (req, res) => {
 
-    const { FName, SName, DOB, email } = req.body;
+    const { FName, SName, DOB, email, Gender } = req.body;
 
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
-        connection.query('UPDATE tblaccount SET FName = ?, SName = ?, DOB = ?, email = ? WHERE Id = ?', [FName, SName, DOB, email, req.params.Id], (err, rows) => {
+        connection.query('UPDATE tblaccount SET FName = ?, SName = ?, DOB = ?, email = ?, Gender = ? WHERE Id = ?', [FName, SName, DOB, email, Gender, req.params.Id], (err, rows) => {
 
             connection.release();
 

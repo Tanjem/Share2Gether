@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+body {
+    color: black;
+    background-color: #00476b;
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+   
+}
+
+a  {
+    text-decoration: none;
+    color: #222; 
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
+.nav-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: -1;
+}
+
+.nav-background svg {
+    position: relative;
+    display: block;
+    width: calc(137% + 1.3px);
+    height: 106px;
+    transform: rotateY(180deg);
+}
+
+.nav-background .shape-fill {
+    fill: #00c28a;
+}
+
+
+form {
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+
+    
+}
+
+.form-control  {
+
+    background-color: #ccc;
+}
+
+.btn-primary {
+    background-color: #222;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #f5f5f5;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.breadcrumb {
+
+    display: flex;
+    align-items: center;
+    background-color: #ccc;
+    max-width: 250px;
+    width: 100%;
+    padding: 10px 20px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 20px;
+
+    margin-top: 130px;
+    margin-left: 70px;
+
+    
+}
