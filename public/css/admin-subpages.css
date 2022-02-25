@@ -22,11 +22,18 @@ body {
 table th,
 td{
     color: #ccc;
+    text-decoration: none;
+
 
 }
 
 
+a  {
+    text-decoration: none;
+    color: #222; 
+    font-family: "Montserrat", sans-serif;
 
+}
 
 .nav-background {
     position: absolute;
@@ -52,25 +59,30 @@ td{
 
 
 
-.breadcrumb-nav {
+/* .breadcrumb-nav {
 
     display: flex;
     width: 100%;
     padding-left: 300px;
     padding-top: 100px;
-   
+    text-decoration: none;
+    
 
-}
+} */
 
 .breadcrumb {
 
     display: flex;
     align-items: center;
     background-color: #ccc;
-    max-width: 400px;
+    max-width: 250px;
     width: 100%;
     padding: 10px 20px;
     font-family: "Montserrat", sans-serif;
     border-radius: 20px;
+
+    margin-top: 30px;
+    margin-left: 30px;
+
     
 }
