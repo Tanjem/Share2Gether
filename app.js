@@ -142,8 +142,9 @@ app.use('/', routes);
 app.use('/auth', authRoutes); 
 app.use('/', userRoutes);
 
-server.listen(5069, () => {
-    console.log("Server started on Port 5069"); // Connecting to the port starting server
+const port = process.env.PORT || 5069
+server.listen(port, () => {
+    console.log(`Server started on Port ${port}`); // Connecting to the port starting server
 });
 
 

@@ -73,16 +73,18 @@ exports.login = async (req, res)  => {
 
 
 
+
 exports.register = async (req, res)  => {
 
     pool.getConnection((err, connection) => {
+
 
         //const name = req.body.name;
         //const email = req.body.email;
         //const password = req.body.password;
         //const passwordConfirm = req.body.passwordConfirm;
         //<DESTRUCTURING> --->
-        const {f_name, l_name, dob, email, password, passwordConfirm, gender} = req.body;         //requesting "f_name, l_name, dob, email, password, passwordConfirm, gender" from register_profile.hbs
+        const {f_name, l_name, dob, email, password, passwordConfirm, gender} = req.body;    
     
         connection.query('SELECT email FROM tblaccount WHERE email = ?', [email], async (error, results) => {
     
@@ -109,6 +111,10 @@ exports.register = async (req, res)  => {
                     message: 'First name cannot be same as last name.'
                 });
     
+            } else if (email !== validateEmail(email)) {
+                return res.render('register_profile',{
+                    message: 'Sorry! Provide a valid email.'
+                });
             }
     
             let hashedPassword = await bcrypt.hash(password, 8);        //Hashing password
