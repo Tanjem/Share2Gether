@@ -56,12 +56,12 @@ exports.form = (req, res) => {
 
 exports.create = (req, res) => {
 
-    const { FName, SName, DOB, email } = req.body;
+    const { FName, SName, DOB, email, Gender } = req.body;
 
     pool.getConnection((err, connection) => {
         if(err) throw err;
 
-        connection.query('INSERT INTO tblaccount SET FName = ?, SName = ?, DOB = ?, email = ?',[FName, SName, DOB, email], (err, rows) => {
+        connection.query('INSERT INTO tblaccount SET FName = ?, SName = ?, DOB = ?, email = ?, Gender = ?',[FName, SName, DOB, email, Gender], (err, rows) => {
 
             connection.release();
 
