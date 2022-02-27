@@ -20,8 +20,10 @@ exports.login = async (req, res)  => {
 
         try {
 
-            const { email, password } = req.body;             //requesting "email & password" from login.hbs
-            if(!email || !password) {                         //Validation of input fields
+            //requesting "email & password" from login.hbs
+            const { email, password } = req.body; 
+            //Validation of input fields            
+            if(!email || !password) {                         
                 return res.status(401).render('login', {
                     message: 'You need email and password.'
                 })
@@ -29,18 +31,19 @@ exports.login = async (req, res)  => {
     
     
             connection.query('SELECT * FROM tblaccount WHERE email = ?', [email], async (error, results) => {     
-    
-                const passwordMatches = await bcrypt.compare(password, results[0].Password)     //Comparing if passwords are same from login input field - database password
-    
-                if (!results || !passwordMatches) {                                             //Validate if password do not match
+                //Comparing if passwords are same from login input field - database password
+                const passwordMatches = await bcrypt.compare(password, results[0].Password)     
+                //Validate if password do not match
+                if (!results || !passwordMatches) {                                             
                     res.status(401).render('login', {
                         message: 'The email or password its incorrect'
                     })
                 }        
                 else {
                     const id = results[0].Id;
-            
-                    const token = jwt.sign({ id }, process.env.JWT_SECRET, {                    //assigning a cookie token to the User Id
+
+                    //assigning a cookie token to the User Id
+                    const token = jwt.sign({ id }, process.env.JWT_SECRET, {                    
                         expiresIn: process.env.JWT_EXPIRE_IN
                     });
                     const cookieOptions = {
@@ -52,10 +55,10 @@ exports.login = async (req, res)  => {
                     res.cookie('jwt', token, cookieOptions);
                     res.cookie('id', id, cookieOptions)
 
-                    if (results[0].email == "tanjemjobab2003@gmail.com") {
-                        res.status(200).redirect("/admin_page")                                //Redirect user to page
+                    if (results[0].email == "share2getherAdmin@gmail.com") {
+                        res.status(200).redirect("/admin_page")                                
                     } else {
-                        res.status(200).redirect("/user-profile")     //Redirect user to page
+                        res.status(200).redirect("/user-profile")     
                     }
                             
                 }
@@ -92,32 +95,32 @@ exports.register = async (req, res)  => {
             if(error) {
                 console.log(error);
             }
-    
-            if(results.length > 0) {                                   //Validation if email already exists:
+
+            //Validation if email already exists:
+            if(results.length > 0) {                                   
     
                 return res.render('register_profile', {
-                    message: 'That email is already in use.'           //the 'message' variable is used in the index.hbs
+                    message: 'That email is already in use.'           
                 })
-    
-            } else if(password !== passwordConfirm) {                  //Validation if Passwords do not match to each other:
+
+            //Validation if Passwords do not match to each other:
+            } else if(password !== passwordConfirm) {                  
       
                 return res.render('register_profile', {
                     message: 'Passwords do not match.'
                 })
-    
-            } else if(f_name == l_name) {                               //Validation if first name and last name cannot be same
+
+            //Validation if first name and last name cannot be same
+            } else if(f_name == l_name) {                               
     
                 return res.render('register_profile',{
                     message: 'First name cannot be same as last name.'
                 });
     
-            } else if (email !== validateEmail(email)) {
-                return res.render('register_profile',{
-                    message: 'Sorry! Provide a valid email.'
-                });
             }
-    
-            let hashedPassword = await bcrypt.hash(password, 8);        //Hashing password
+
+            //Hashing password
+            let hashedPassword = await bcrypt.hash(password, 8);        
 
             //Inserting Data into the Database query:
     

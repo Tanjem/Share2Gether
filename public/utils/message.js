@@ -1,12 +1,12 @@
-const moment = require('moment');
+    const moment = require('moment');
 
-let generateMessage = (from, text) => {
+    let generateMessage = (from, text) => {
 
-    return {
-        from,
-        text,
-        createdAt: moment().valueOf()
+        return {
+            from,
+            text,
+            createdAt: moment().valueOf()
+        };
     };
-};
 
-module.exports = {generateMessage};
+    module.exports = {generateMessage};
